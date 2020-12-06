@@ -1,0 +1,82 @@
+
+
+<div class="container-fixed">
+    <div class="col-content" style="width:100%">
+        <div class="inner">
+            <article class="article-list">
+                <input type="hidden" value="@Model.BlogTypeID" id="blogtypeid" />
+                <section class="article-item" style="background-color: auto;">
+                    <aside class="title" style="line-height:1.5;">
+                        <h2>SpringMVC面试题</h2>
+                        <p class="fc-grey fs-14">
+                            <small>
+                                作者：<a href="javascript:void(0)" target="_blank" class="fc-link">胡某</a>
+                            </small>
+                            <small class="ml10">观看次数：<i class="readcount">999+</i></small>
+                            <small class="ml10">更新于 <label>2020-11-14 16:08:21</label> </small>
+                        </p>
+                    </aside>
+                    <div class="time mt10" style="padding-bottom:0;">
+                        <span class="day">1</span>
+                        <span class="month fs-18">7<small class="fs-14">月</small></span>
+                        <span class="year fs-18">2020</span>
+                    </div>
+                  
+                   
+                    <ul class="fl">
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>springmvc的执行流程</h4>
+                            <div>
+                                <blockquote>
+                                    <ol start=''>
+                                        <li>发送请求到前端控制器DispatcherServlet</li>
+                                        <li>前端控制器请求处理映射器HandlerMapping查找Handler</li>
+                                        <li>处理映射器向前端控制器返回Handler</li>
+                                        <li>前端控制器调用处理适配器去执行Handler</li>
+                                        <li>Handler执行完给适配器返回ModelAndView</li>
+                                        <li>处理适配器向前端控制器返回ModelAndView</li>
+                                        <li>前端控制器请求视图解析器ViewResolver去进行视图解析</li>
+                                        <li>视图解析器向前端控制器返回View视图</li>
+                                        <li>前端控制器进行视图渲染</li>
+                                        <li>前端控制器向用户响应结果</li>
+                            
+                                    </ol>
+                                </blockquote>
+                            </div>
+                          </li>
+                          <!-- <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4></h4>
+                            <div>
+                                <blockquote>
+                                
+                                </blockquote>
+                            </div>
+                          </li> -->
+                      </ul>
+                </section>
+            </article>
+        </div>
+    </div>
+    <div class="col-other">
+        <div class="inner">
+            <!--右边悬浮 平板或手机设备显示-->
+            <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+            <div class="article-category">
+                <div class="article-category-title">分类导航</div>
+                <li data-index="0" class="slider"></li>
+                <li data-index="1" style="font-size: 16px;"><a href="javascript:article()">全部文章</a></li>
+                <li data-index="2" style="font-size: 16px;"><a href="javascript:java()">Java</a></li>
+                <li data-index="3" style="font-size: 16px;"><a href="javascript:sql()">数据库</a></li>
+                <li data-index="4" style="font-size: 16px;"><a href="#">前端</a></li>
+                <li data-index="5" style="font-size: 16px;"><a href="#">框架</a></li>
+                <li data-index="6" style="font-size: 16px;"><a href="javascript:questions()">面试题</a></li>
+                <div class="f-cb"></div>
+            </div>
+        </div>
+    </div>	
+</div>
+<script src="../js/yss/article.js"></script>

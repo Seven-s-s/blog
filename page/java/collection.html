@@ -1,0 +1,346 @@
+
+
+<div class="container-fixed">
+    <div class="col-content" style="width:100%">
+        <div class="inner">
+            <article class="article-list">
+                <input type="hidden" value="@Model.BlogTypeID" id="blogtypeid" />
+                <section class="article-item" style="background-color: auto;">
+                    <aside class="title" style="line-height:1.5;">
+                        <h2>Java的集合操作</h2>
+                        <p class="fc-grey fs-14">
+                            <small>
+                                作者：<a href="javascript:void(0)" target="_blank" class="fc-link">胡某</a>
+                            </small>
+                            <small class="ml10">观看次数：<i class="readcount">999+</i></small>
+                            <small class="ml10">更新于 <label>2020-11-14 16:08:21</label> </small>
+                        </p>
+                    </aside>
+                    <div class="time mt10" style="padding-bottom:0;">
+                        <span class="day">1</span>
+                        <span class="month fs-18">7<small class="fs-14">月</small></span>
+                        <span class="year fs-18">2020</span>
+                    </div>
+
+
+                    <ul class="fl">
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>Set</h4>
+                            <div>
+                          
+                                <span class="h6-text">1.概念</span>
+                                <blockquote>
+                     
+                                    无序的，不可重复的集合
+                                    <br>
+                                    要保证元素的唯一性，需要重写hashCode()和equals()方法
+                                    <br>
+                
+                                </blockquote>
+                                <span class="h6-text">2.方法</span>
+
+                                <blockquote>
+                                    添加：add()
+                                    <br>
+                                    删除：remove()
+                                    <br>
+                                </blockquote>
+                               
+                            <span class="h6-text">3.取值方式</span>
+                            <blockquote>
+                               
+                                <div class="div-text">
+                                    Set&lt;String&gt; set = new HashSet&lt;&gt;();
+                                    <br>
+                                    set.add("apple");
+                                    <br>
+                                    set.add("banana");
+                                    <br>
+                                    set.add("pear");</div>
+                                <strong>foreach遍历</strong>
+                                <div class="div-text">
+                                    for (String s : set){
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(s);
+                                    <br>
+                                    }</div>
+                                <strong>迭代器遍历</strong>
+                                <div class="div-text">
+                                    Iterator&lt;String&gt; iterator = set.iterator();
+                                    <br>
+                                    while (iterator.hasNext()){
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;String s = iterator.next();
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(s);
+                                    <br>
+                                    }</div>
+                            </blockquote>
+                        </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>List</h4>
+                            <div>
+                            <span class="h6-text">1.概念</span>
+                            <blockquote>有序的，可重复的集合</blockquote>
+              
+                            <span class="h6-text">2.方法</span>
+                            <blockquote>
+           
+                                添加：add()
+                                <br>
+                                删除：remove()
+                                <br>
+                                获取：get()
+                                <br>
+                                长度：size()
+                                <br>
+                            </blockquote>
+                            <span class="h6-text">3.取值方式</span>
+                            <blockquote>
+                                <div class="div-text">
+                                    List&lt;String&gt; list = new LinkedList<>();
+                                        <br>
+                                        list.add("apple");
+                                        <br>
+                                        list.add("banana");
+                                        <br>
+                                        list.add("pear");
+                                        <br>
+                                </div>
+                                <strong>for循环</strong>
+                                <div class="div-text">
+                                    for (int i = 0;i &lt; list.size();i++){
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(list.get(i));
+                                    <br>
+                                    }</div>
+                                <strong>foreach循环</strong>
+                                <div class="div-text">
+
+                                    for (String s : list){
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(s);
+                                    <br>
+                                    }</div><strong>迭代器循环</strong>
+                                <div class="div-text">
+                                    Iterator&lt;String&gt; iterator = list.iterator();
+                                        <br>
+                                        while (iterator.hasNext()){
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;String s = iterator.next();
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(s);
+                                        <br>
+                                        }</div>
+                            </blockquote>
+                        </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>Map</h4>
+                            <div>
+                            <span class="h6-text">1.概念</span>
+                            <blockquote>无序，键值对集合（映射关系），键不能重复，值可以重复，键可以为null，值也可为null。</blockquote>
+              
+                            <span class="h6-text">2.方法</span>
+                            <blockquote><p>添加：put(key,value)</p>
+                            <p>获取：get(key)</p>
+                            <p>删除：remove(key)</p>
+                            </blockquote>
+                            <span class="h6-text">3.取值方式</span>
+                            <blockquote>
+                                <div class="div-text">
+                                    Map&lt;String&gt; map = new HashMap&lt;&gt;();
+                                    <br>
+                                    map.put("apple","good");
+                                    <br>
+                                    map.put("banana","better");
+                                    <br>
+                                    map.put("pear","best");
+                                    <br>
+                                    Set&lt;String&gt; keySet = map.keySet();
+                                </div>
+                                拿到所有的key，遍历key，根据key拿值
+                                <br>
+                                <strong>foreach循环遍历</strong>
+                                <div class="div-text">
+                                    for (String key : keySet){
+                                        <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(map.get(key));
+                                        <br>
+                                    }
+                                </div>
+                                <strong>迭代器循环</strong>
+                                <div class="div-text">
+                    
+                                        while (iterator.hasNext()){
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;String s = iterator.next();
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(map.get(s));
+                                        <br>
+                                        }</div>
+                            </blockquote>
+                            <span class="h6-text">获取所有的映射关系集合</span>
+                            <blockquote>
+                                Set&lt;Map.Entry&lt;String&gt&gt; entries = map.entrySet();
+                                <br>
+                                <strong>for循环</strong>
+                                <div  class="div-text">
+                                    for (Map.Entry&lt;String&gt; entry:entries){
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(entry.getKey()+" "+entry.getValue());
+                                        <br>
+                                    }
+                                </div>
+                                <strong>迭代器遍历</strong>
+                                <div  class="div-text">
+                                    Iterator&lt;Map.Entry&lt;String&gt&gt; iterator = entries.iterator();
+                                        <br>
+                                    while (iterator.hasNext()){
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Map.Entry&lt;String&gt; entry = iterator.next();
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;System.out.println(entry.getKey()+" "+entry.getValue());
+                                        <br>
+                                    }
+                                </div>
+                            </blockquote>
+                        </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>迭代器</h4>
+                            <div>
+                            <span class="h6-text">1.Iterator</span>
+                            <blockquote>
+                                next()：返回迭代中的下一个元素
+                                <br>
+                                hasNext()：如果迭代器有下一个元素，返回true
+                            </blockquote>
+                            <span class="h6-text">2.ListIterator</span>
+                            <blockquote>
+                                next()
+                                <br>
+                                hasNext()
+                                <br>
+                                previous()：返回列表中的上一个元素 
+                                <br>
+                                hasPrevious()：如果迭代在相反方向上遍历有更多元素，返回true
+                                <br>
+                                add()：向指定的元素插入列表
+                            </blockquote>
+                        </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>Collections</h4>
+                            <div>
+                            <span class="h6-text">1.方法</span>
+                            <blockquote>void Reverse(List list)：反转指定列表中元素的顺序
+                                <p>void Shuffle(List list)：使用默认随机源对指定列表进行置换</p>
+                                <p>void Sort(List list)：根据指定比较器产生的顺序对指定列表进行排序</p>
+                                <p>void Sort(list list,Comparator c)：根据指定比较器产生的顺序对指定列表进行排序</p>
+                                <p>void Swap(List list,int distance)：根据指定的距离轮换指定列表中的元素</p>
+                                </blockquote>
+                            <span class="h6-text">2.实例</span>
+                            <blockquote>
+                                准备数据
+                                <div class="div-text">
+                                    list.add(3);
+                                    <br>
+                                    list.add(4);
+                                    <br>
+                                    list.add(1);
+                                    <br>
+                                    list.add(2);
+                                    <br>
+                                    list.add(6);
+                                    <br>
+                                    list.add(5);
+                                    <br>
+                                    输出
+                                    [3, 4, 1, 2, 6, 5]
+                                </div>
+                                倒序排序
+                                <div class="div-text">
+                                    Collections.reverse(list);
+                                    <br>
+                                    输出
+                                    [5, 6, 2, 1, 4, 3]
+                                </div>
+                                随机排序
+                                <div class="div-text">
+                                    Collections.shuffle(list);
+                                    <br>
+                                    输出
+                                    [5, 6, 2, 1, 4, 3]
+                                </div>
+                                自然顺序排序
+                                <div class="div-text">
+                                    Collections.sort(list);
+                                    <br>
+                                    输出
+                                    [1, 2, 3, 4, 5, 6]
+                                </div>
+                                自定义排序
+                                <div class="div-text">
+                                    Collections.sort(list, new Comparator<Integer>() {
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;@Override
+                                        <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;public int compare(Integer i1, Integer i2) {
+                                            <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//从大到小
+                                            <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i2-i1;
+                                            <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp; }
+                                        <br>
+                                    });
+                                    <br>
+                                    输出
+                                    [6, 5, 4, 3, 2, 1]
+                                </div>
+                                交换
+                                <div class="div-text">
+                                    Collections.swap(list,0,1);
+                                    <br>
+                                    输出
+                                    [4, 3, 1, 2, 6, 5]
+                                </div>
+                            </blockquote>
+                        </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+        </div>
+    </div>
+    <div class="col-other">
+        <div class="inner">
+            <!--右边悬浮 平板或手机设备显示-->
+            <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+            <div class="article-category">
+                <div class="article-category-title">分类导航</div>
+                <li data-index="0" class="slider"></li>
+                <li data-index="1" style="font-size: 16px;"><a href="javascript:article()">全部文章</a></li>
+                <li data-index="2" style="font-size: 16px;"><a href="javascript:java()">Java</a></li>
+                <li data-index="3" style="font-size: 16px;"><a href="javascript:sql()">数据库</a></li>
+                <li data-index="4" style="font-size: 16px;"><a href="#">前端</a></li>
+                <li data-index="5" style="font-size: 16px;"><a href="#">框架</a></li>
+                <li data-index="6" style="font-size: 16px;"><a href="javascript:questions()">面试题</a></li>
+                <div class="f-cb"></div>
+            </div>
+        </div>
+    </div>	
+</div>
+<script src="../js/yss/article.js"></script>

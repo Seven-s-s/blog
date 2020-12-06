@@ -1,0 +1,293 @@
+
+<div class="container-fixed">
+    <div class="col-content" style="width:100%">
+        <div class="inner">
+            <article class="article-list">
+                <input type="hidden" value="@Model.BlogTypeID" id="blogtypeid" />
+                <section class="article-item" style="background-color: auto;">
+                    <aside class="title" style="line-height:1.5;">
+                        <h2>Java的基础操作</h2>
+                        <p class="fc-grey fs-14">
+                            <small>
+                                作者：<a href="javascript:void(0)" target="_blank" class="fc-link">胡某</a>
+                            </small>
+                            <small class="ml10">观看次数：<i class="readcount">999+</i></small>
+                            <small class="ml10">更新于 <label>2020-11-26 16:08:21</label> </small>
+                        </p>
+                    </aside>
+                    <div class="time mt10" style="padding-bottom:0;">
+                        <span class="day">1</span>
+                        <span class="month fs-18">7<small class="fs-14">月</small></span>
+                        <span class="year fs-18">2020</span>
+                    </div>
+                  
+                   
+                    <ul class="fl">
+                        <li>
+                          <input type="checkbox" checked>
+                          <i></i>
+                          <h4>基本数据类型</h4>
+                          <div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style='text-align:center;'><span>数据类型</span></th>
+                                        <th style='text-align:center;'><span>占用字节</span></th>
+                                        <th style='text-align:center;'><span>取值范围</span></th>
+                                        <th style='text-align:center;'><span>默认值</span></th>
+                                        <th style='text-align:center;'><span>包装类型</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style='text-align:center;'><span>boolean</span></td>
+                                        <td style='text-align:center;'><span>只有true和false</span></td>
+                                        <td style='text-align:center;'><span>true、false</span></td>
+                                        <td style='text-align:center;'><span>false</span></td>
+                                        <td style='text-align:center;'><span>Boolean</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>byte</span></td>
+                                        <td style='text-align:center;'><span>1(8位）</span></td>
+                                        <td style='text-align:center;'><span>-128~127</span></td>
+                                        <td style='text-align:center;'><span>0</span></td>
+                                        <td style='text-align:center;'><span>Byte</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>short</span></td>
+                                        <td style='text-align:center;'><span>2(16位)</span></td>
+                                        <td style='text-align:center;'><span>-32768~32767</span></td>
+                                        <td style='text-align:center;'><span>0</span></td>
+                                        <td style='text-align:center;'><span>Short</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>int</span></td>
+                                        <td style='text-align:center;'><span>4(32位)</span></td>
+                                        <td style='text-align:center;'><span>-2^31~2^31-1</span></td>
+                                        <td style='text-align:center;'><span>0</span></td>
+                                        <td style='text-align:center;'><span>Integer</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>long</span></td>
+                                        <td style='text-align:center;'><span>8</span></td>
+                                        <td style='text-align:center;'><span>-2^63~2^63-1</span></td>
+                                        <td style='text-align:center;'><span>0.0l</span></td>
+                                        <td style='text-align:center;'><span>Long</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>float</span></td>
+                                        <td style='text-align:center;'><span>4</span></td>
+                                        <td style='text-align:center;'><span>3.4E-45~1.4E38</span></td>
+                                        <td style='text-align:center;'><span>0.0f</span></td>
+                                        <td style='text-align:center;'><span>Float</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>double</span></td>
+                                        <td style='text-align:center;'><span>8</span></td>
+                                        <td style='text-align:center;'><span>4.9E-324~1.8E308</span></td>
+                                        <td style='text-align:center;'><span>0</span></td>
+                                        <td style='text-align:center;'><span>Double</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>char</span></td>
+                                        <td style='text-align:center;'><span>2</span></td>
+                                        <td style='text-align:center;'><span>0~65535</span></td>
+                                        <td style='text-align:center;'><span>\u0000(空格)</span></td>
+                                        <td style='text-align:center;'><span>Character</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>修饰符</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th style='text-align:center;'><span>修饰符</span></th>
+                                        <th style='text-align:center;'><span>当前类</span></th>
+                                        <th style='text-align:center;'><span>同包</span></th>
+                                        <th style='text-align:center;'><span>子类</span></th>
+                                        <th style='text-align:center;'><span>其他包</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style='text-align:center;'><span>public</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>protect</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>×</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>default</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>×</span></td>
+                                        <td style='text-align:center;'><span>×</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td style='text-align:center;'><span>private</span></td>
+                                        <td style='text-align:center;'><span>√</span></td>
+                                        <td style='text-align:center;'><span>×</span></td>
+                                        <td style='text-align:center;'><span>×</span></td>
+                                        <td style='text-align:center;'><span>×</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li> 
+                        <li>
+                        <input type="checkbox" checked>
+                        <i></i>
+                        <h4>Character 类</h4>
+                        <div>
+                            <span class="h6-text">方法</span>
+                            <blockquote>
+                                isDigit()是否是一个数字字符
+                                <p>isWhitespace()是否是一个空白字符</p>
+                                <p>isUpperCase()是否是大写字母</p>
+                                <p>isLowerCase()是否是小写字母</p>
+                                <p>toUpperCase() 指定字母的大写形式</p>
+                                <p>toLowerCase()指定字母的小写形式</p>
+                                <p>toString()返回字符的字符串形式，字符串的长度仅为1</p>
+                                </blockquote>
+                        </div>
+                            
+                        </li>
+                    <li>
+                        <input type="checkbox" checked>
+                        <i></i>
+                        <h4>String类</h4>
+                        <div>
+                        <span class="h6-text">常用方法</span>
+                        <blockquote>char charAt(int index)：返回指定索引处的 char 值。
+                            <p>int compareTo(String anotherString)：按字典顺序比较两个字符串。</p>
+                            <p>String concat(String str)：将指定字符串连接到此字符串的结尾。</p>
+                            <p>byte[] getBytes()：使用平台的默认字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</p>
+                            <p>int indexOf(int ch)：返回指定字符在此字符串中第一次出现处的索引。</p>
+                            <p>boolean matches(String regex)：告知此字符串是否匹配给定的正则表达式。</p>
+                            <p>String replace(char oldChar, char newChar)：返回一个新的字符串，它是通过用 newChar 替换此字符串中出现的所有 oldChar 得到的。</p>
+                            <p>String[] split(String regex)：根据给定正则表达式的匹配拆分此字符串。</p>
+                            <p>char[] toCharArray()：将此字符串转换为一个新的字符数组。</p>
+                            <p>String substring(int beginIndex, int endIndex)：返回一个新字符串，它是此字符串的一个子字符串。</p>
+                            <p>contains(CharSequence chars)：判断是否包含指定的字符系列。</p>
+                            <p>isEmpty()：判断字符串是否为空。</p>
+                            </blockquote>
+                            <span class="h6-text">其他方法</span>
+                            <blockquote>int compareTo(Object o)：把这个字符串和另一个对象比较。
+                                <p>int compareToIgnoreCase(String str)：按字典顺序比较两个字符串，不考虑大小写。</p>
+                                <p>static String copyValueOf(char[] data)：返回指定数组中表示该字符序列的 String。</p>
+                                <p>static String copyValueOf(char[] data, int offset, int count)：返回指定数组中表示该字符序列的 String。</p>
+                                <p>boolean equals(Object anObject)：将此字符串与指定的对象比较。</p>
+                                <p>boolean equalsIgnoreCase(String anotherString)：将此 String 与另一个 String 比较，不考虑大小写。</p>
+                                <p>byte[] getBytes(String charsetName)：使用指定的字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。</p>
+                                <p>void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)：将字符从此字符串复制到目标字符数组。</p>
+                                <p>int hashCode()：返回此字符串的哈希码。</p>
+                                <p>int indexOf(int ch, int fromIndex)：返回在此字符串中第一次出现指定字符处的索引，从指定的索引开始搜索。</p>
+                                <p>int indexOf(String str)：返回指定子字符串在此字符串中第一次出现处的索引。</p>
+                                <p>int indexOf(String str, int fromIndex)：返回指定子字符串在此字符串中第一次出现处的索引，从指定的索引开始。</p>
+                                <p>int lastIndexOf(int ch)：返回指定字符在此字符串中最后一次出现处的索引。</p>
+                                <p>int lastIndexOf(int ch, int fromIndex)：返回指定字符在此字符串中最后一次出现处的索引，从指定的索引处开始进行反向搜索。</p>
+                                <p>int lastIndexOf(String str)：返回指定子字符串在此字符串中最右边出现处的索引。</p>
+                                <p>int lastIndexOf(String str, int fromIndex)：返回指定子字符串在此字符串中最后一次出现处的索引，从指定的索引开始反向搜索。</p>
+                                <p>int length()：返回此字符串的长度。</p>
+                                <p>boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)：测试两个字符串区域是否相等。</p>
+                                <p>boolean regionMatches(int toffset, String other, int ooffset, int len)：测试两个字符串区域是否相等。</p>
+                                <p>String replaceAll(String regex, String replacement)：使用给定的 replacement 替换此字符串所有匹配给定的正则表达式的子字符串。
+                                String replaceFirst(String regex, String replacement)：使用给定的 replacement 替换此字符串匹配给定的正则表达式的第一个子字符串。</p>
+                                <p>String[] split(String regex, int limit)：根据匹配给定的正则表达式来拆分此字符串。</p>
+                                <p>boolean startsWith(String prefix)：测试此字符串是否以指定的前缀开始。</p>
+                                <p>boolean startsWith(String prefix, int toffset)：测试此字符串从指定索引开始的子字符串是否以指定前缀开始。</p>
+                                <p>CharSequence subSequence(int beginIndex, int endIndex)：：返回一个新的字符序列，它是此序列的一个子序列。</p>
+                                <p>String substring(int beginIndex)：返回一个新的字符串，它是此字符串的一个子字符串。</p>
+                                <p>String toLowerCase()：使用默认语言环境的规则将此 String 中的所有字符都转换为小写。</p>
+                                <p>String toLowerCase(Locale locale)：：使用给定 Locale 的规则将此 String 中的所有字符都转换为小写。</p>
+                                <p>String toString()：：返回此对象本身（它已经是一个字符串！）。</p>
+                                <p>String toUpperCase()：使用默认语言环境的规则将此 String 中的所有字符都转换为大写。</p>
+                                <p>String toUpperCase(Locale locale)：使用给定 Locale 的规则将此 String 中的所有字符都转换为大写。</p>
+                                <p>String trim()：返回字符串的副本，忽略前导空白和尾部空白。</p>
+                                <p>static String valueOf(primitive data type x)：返回给定data type类型x参数的字符串表示形式。</p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>StringBuffer类</h4>
+                            <div>
+                                <span class="h6-text">方法</span>
+                                <blockquote>public StringBuffer append(String s)：将指定的字符串追加到此字符序列。
+                                    <p>public StringBuffer reverse()：将此字符序列用其反转形式取代。</p>
+                                    <p>public delete(int start, int end)：移除此序列的子字符串中的字符。</p>
+                                    <p>public insert(int offset, int i)：将 int 参数的字符串表示形式插入此序列中。</p>
+                                    <p>replace(int start, int end, String str)：使用给定 String 中的字符替换此序列的子字符串中的字符。</p>
+                                    </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>Date</h4>
+                            <blockquote>
+                                Date date = new Date() <br>
+                                <span class="h6-text">获取当前时间返回一个毫秒值</span>
+                                <div class="div-text">
+                                    Long time = System.currentTimeMills();
+                                    <br>
+                                    date.setTime(time);
+                                </div>
+                                <span class="h6-text">将date转化为String</span>
+                                <div class="div-text">
+                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+                                    <br>
+                                    String s = sdf.format(date);
+                                </div>
+                                <span class="h6-text">将String转化为date</span>
+                                <div class="div-text">
+                                    String s = "yyyy-MM-dd HH:mm:ss";
+                                    <br>
+                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                                    <br>
+                                    date = sdf.parse(s);
+                                </div>
+                            </blockquote>    
+                        </li>
+                        <!-- <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>修饰符</h4>
+                            
+                            </li> -->
+                      </ul>
+                </section>
+            </article>
+        </div>
+    </div>
+    <div class="col-other">
+        <div class="inner">
+            <!--右边悬浮 平板或手机设备显示-->
+            <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+            <div class="article-category">
+                <div class="article-category-title">分类导航</div>
+                <li data-index="0" class="slider"></li>
+                <li data-index="1" style="font-size: 16px;"><a href="javascript:article()">全部文章</a></li>
+                <li data-index="2" style="font-size: 16px;"><a href="javascript:java()">Java</a></li>
+                <li data-index="3" style="font-size: 16px;"><a href="javascript:sql()">数据库</a></li>
+                <li data-index="4" style="font-size: 16px;"><a href="#">前端</a></li>
+                <li data-index="5" style="font-size: 16px;"><a href="#">框架</a></li>
+                <li data-index="6" style="font-size: 16px;"><a href="javascript:questions()">面试题</a></li>
+                <div class="f-cb"></div>
+            </div>
+        </div>
+    </div>	
+</div>
+<script src="../js/yss/article.js"></script>

@@ -1,0 +1,134 @@
+
+<div class="container-fixed">
+    <div class="col-content" style="width:100%" id="col-content">
+        <div class="inner">
+            <article class="article-list">
+
+                <input type="hidden" value="@Model.BlogTypeID" id="blogtypeid" />
+                <section class="article-item" style="background-color: auto;">
+                    
+                    <aside class="title" style="line-height:1.5;">
+                        <h2>Java的File操作</h2>
+                        <p class="fc-grey fs-14">
+                            <small>
+                                作者：<a href="javascript:void(0)" target="_blank" class="fc-link">胡某</a>
+                            </small>
+                            <small class="ml10">观看次数：<i class="readcount">999+</i></small>
+                            <small class="ml10">更新于 <label>2020-11-14 16:08:21</label> </small>
+                        </p>
+                    </aside>
+                    <div class="time mt10" style="padding-bottom:0;">
+                        <span class="day">1</span>
+                        <span class="month fs-18">7<small class="fs-14">月</small></span>
+                        <span class="year fs-18">2020</span>
+                    </div>
+
+
+                    <ul class="fl">
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>方法</h4>
+                            <blockquote>
+                               
+                                File file = new File(路径);
+                                createNewFile()：创建文件，如果有没有该文件就创建文件并返回true，否则返回false
+                                <br><br>
+                                mkdir()：创建目录，如果有该目录则创建该目录并返回true，否则返回false
+                                <br><br>
+                                mkdirs()：创建多级目录，如果有这多级目录则创建多级目录并返回true，否则返回false
+                                <br><br>
+                                isDirectory()：判断file是否为目录
+                                <br><br>
+                                isFile()：判断file是否为文件
+                                <br><br>
+                                exists()：判断file是否存在
+                                <br><br>
+                                getAbsolutePath()：返回该路径的绝对路径名字符串
+                                <br><br>
+                                getPath()：返回该路径的路径名字符串
+                                <br><br>
+                                getName()：返回该路径表示的文件或目录
+                                <br><br>
+                                list()：返回该目录中的文件和目录的名称字符串数组
+                                <br><br>
+                                listFiles()：返回该目录中的文件和目录的file对象数组
+                                <br><br>
+                                delete()：删除该目录，如果目录中有内容，不能直接删除，先要删除目录中的内容，在删除目录
+                            </blockquote>
+
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>例子</h4>
+                            <div>
+                            <span class="h6-text">1.在D盘下创建文件file.txt</span>
+                            <blockquote>
+                                <div class="div-text">
+                                    File file = new File("D://file.txt");
+                                    <br>
+                                    try {
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;boolean b = file.createNewFile();
+                                    <br>
+                                    } catch (IOException e) {
+                                    <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace();
+                                    <br>
+                                    }
+                                    <br>
+                                    System.out.println(b);
+                                </div>
+                            </blockquote>
+                            <span class="h6-text">2.在D盘下创建目录file</span>
+                            <blockquote>
+                                <div class="div-text">
+                                    File file = new File("D://file");
+                                    <br>
+                                    boolean b = file.mkdir();
+                                    <br>
+                                    System.out.println(b);
+                                </div>
+                            </blockquote>
+                            <span class="h6-text">3.在D盘下创建目录file，在file目录下在创建目录files</span>
+                            <blockquote>
+                                <div class="div-text">
+                                    File file = new File("D://file//files");
+                                    <br>
+                                    boolean b = file.mkdirs();
+                                    <br>
+                                    System.out.println(b);
+                                    <br>
+                                </div>
+                            </blockquote>
+                        </div>
+                        </li>
+                        
+                        <li>
+                            
+                        </li>
+                    </ul>
+                </section>
+            </article>
+        </div>
+    </div>
+    <div class="col-other">
+        <div class="inner">
+            <!--右边悬浮 平板或手机设备显示-->
+            <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+            <div class="article-category">
+                <div class="article-category-title">分类导航</div>
+                <li data-index="0" class="slider"></li>
+                <li data-index="1" style="font-size: 16px;"><a href="javascript:article()">全部文章</a></li>
+                <li data-index="2" style="font-size: 16px;"><a href="javascript:java()">Java</a></li>
+                <li data-index="3" style="font-size: 16px;"><a href="javascript:sql()">数据库</a></li>
+                <li data-index="4" style="font-size: 16px;"><a href="#">前端</a></li>
+                <li data-index="5" style="font-size: 16px;"><a href="#">框架</a></li>
+                <li data-index="6" style="font-size: 16px;"><a href="javascript:questions()">面试题</a></li>
+                <div class="f-cb"></div>
+            </div>
+        </div>
+    </div>	
+</div>
+<script src="../js/yss/article.js"></script>

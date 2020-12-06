@@ -1,0 +1,218 @@
+<div class="container-fixed">
+    <div class="col-content" style="width:100%">
+        <div class="inner">
+            <article class="article-list">
+                <input type="hidden" value="@Model.BlogTypeID" id="blogtypeid" />
+                <section class="article-item" style="background-color: auto;">
+                    <aside class="title" style="line-height:1.5;">
+                        <h2>mysql</h2>
+                        <p class="fc-grey fs-14">
+                            <small>
+                                作者：<a href="javascript:void(0)" target="_blank" class="fc-link">胡某</a>
+                            </small>
+                            <small class="ml10">观看次数：<i class="readcount">999+</i></small>
+                            <small class="ml10">更新于 <label>2020-11-14 16:08:21</label> </small>
+                        </p>
+                    </aside>
+                    <div class="time mt10" style="padding-bottom:0;">
+                        <span class="day">1</span>
+                        <span class="month fs-18">7<small class="fs-14">月</small></span>
+                        <span class="year fs-18">2020</span>
+                    </div>
+
+
+                    <ul class="fl">
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>常用命令</h4>
+                            <div>
+                                <span class="h6-text">查看当前下的路径</span>
+                                <blockquote>
+                                    pwd
+                                </blockquote>
+                                <span class="h6-text">列出所有文件</span>
+                                <blockquote>
+                                    ls
+                                    <blockquote>
+                                        -l	以列表的样式列出所有文件
+                                        <br>
+                                        -a	显示隐藏文件
+                                        <br>
+                                        -l -h或者-lh	显示文件大小
+                                        <br>
+                                    *.txt	查找以txt结尾的文件
+                                    <br>
+                                    a.*	查找以a开头的文件
+                                    </blockquote>
+                            
+                                    *	0个或任意多个字符
+                                    <br>
+                                    ？	一个字符
+                                    <br>
+                                    [abcd]	abcd中的一个字符
+                                    <br>
+                                    [a-z]	a到z中的一个字符
+                                </blockquote>
+                                <span class="h6-text">进入文件</span>
+                                <blockquote>
+                                    cd
+                                    <br>
+                                    ..	返回上一级
+                                    <br>
+                                    -	在两个目录来回切换
+                                    <br>
+                                    ~	返回根目录
+                                </blockquote>
+                                <span class="h6-text">自动补全</span>
+                                <blockquote>
+                                    tab
+                                </blockquote>
+                                <span class="h6-text">上下键</span>
+                                <blockquote>
+                                    获取上次的命令，获取下次的命令
+                                </blockquote>
+                                <span class="h6-text">清屏</span>
+                                <blockquote>
+                                    clear
+                                </blockquote>
+                                <span class="h6-text">查看IP地址</span>
+                                <blockquote>
+                                    ip addr
+                                </blockquote>
+                                <span class="h6-text">端口号</span>
+                                <blockquote>
+                                    查询被占用的端口号 
+                                    <br>
+                                    ps aux
+                                    <br>
+                                    查询某个应用占用的端口号
+                                    <br>
+                                    ps -ef | grep 应用名
+                                </blockquote>
+                            </div>
+
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>文件操作</h4>
+                            <div>
+                            <span class="h6-text">创建文件</span>
+                            <blockquote>
+                                touch
+                                <br>
+                                文件名	创建文件	
+                                <br>
+                                .文件名	创建隐藏文件
+                            </blockquote>
+                            <span class="h6-text">创建文件夹</span>
+                            <blockquote>
+                                mkdir
+                            </blockquote>
+                            <span class="h6-text">删除</span>
+                            <blockquote>
+                                rm
+<br>
+                                -d或-r 文件夹名	删除文件夹
+                            </blockquote>
+                            <span class="h6-text">移动</span>
+                            <blockquote>
+                                mv
+                                <br>
+                                mv a b	将a文件移动到b文件夹下
+                                <br>
+                                mv a ./b	将a文件移动到当前目录并改名
+                            </blockquote>
+                            <span class="h6-text">复制</span>
+                            <blockquote>
+                                cp
+                                <br>
+                                cp a b	将a文件复制到b文件夹下
+                            </blockquote>
+                            <span class="h6-text">编辑</span>
+                            <blockquote>
+                                vi
+                                <br>
+                                i	进行编辑
+                                <br>
+                                q	推出程序
+                                <br>
+                                w	保存文件
+                                <br>
+                                按下ESC，输入:wq保存
+                            </blockquote>
+                            <span class="h6-text">查看文件</span>
+                            <blockquote>
+                                tail/cat
+                            </blockquote>
+                            <span class="h6-text">设置为可执行文件</span>
+                            <blockquote>
+                                以ch为后缀的文件
+                                <br>
+                                chmod +x 文件
+                            </blockquote>
+                        </div>
+                        </li>
+                        
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>下载命令</h4>
+                            <div>
+                            <span class="h6-text">下载vim编辑器</span>
+                            <blockquote>
+                                yum -y install vim
+                        
+                            </blockquote>
+                            <span class="h6-text">下载jdk1.8</span>
+                            <blockquote>
+                                yum install java-1.8.0-openjdk* -y
+                            </blockquote>
+                           
+                        </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>虚拟机</h4>
+                            <div>
+                            <span class="h6-text">共享文件</span>
+                            <blockquote>
+                                创建一个共享文件夹，该文件在虚拟机上mnt/hgfs文件夹下
+                                <br>
+                                如果/mnt目录下有hgfs，但hgfs下没有共享文件，输入vmware-hgfsclient时却能看到共享文件夹名称，那下载工具
+                                <br>
+                                yum install -y open-vm-tools-devel
+                                <br>
+                                然后执行以下命令就ok了
+                                <br>
+                                vmhgfs-fuse .host:/ /mnt/hgfs
+                        
+                            </blockquote>
+                        
+                           
+                        </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>管理员操作</h4>
+                            <div>
+                            <blockquote>
+                                su	切换到超级用户
+                                <br>
+                                reboot	重启
+                                <br>
+                                halt	关机
+                            </blockquote>
+                        
+                           
+                        </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+        </div>
+    </div>
+</div>

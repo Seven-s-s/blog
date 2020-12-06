@@ -1,0 +1,637 @@
+<div class="container-fixed">
+    <div class="col-content" style="width:100%">
+        <div class="inner">
+            <article class="article-list">
+                <input type="hidden" value="@Model.BlogTypeID" id="blogtypeid" />
+                <section class="article-item" style="background-color: auto;">
+                    <aside class="title" style="line-height:1.5;">
+                        <h2>Java面试题</h2>
+                        <p class="fc-grey fs-14">
+                            <small>
+                                作者：<a href="javascript:void(0)" target="_blank" class="fc-link">胡某</a>
+                            </small>
+                            <small class="ml10">观看次数：<i class="readcount">999+</i></small>
+                            <small class="ml10">更新于 <label>2020-11-14 16:08:21</label> </small>
+                        </p>
+                    </aside>
+                    <div class="time mt10" style="padding-bottom:0;">
+                        <span class="day">1</span>
+                        <span class="month fs-18">7<small class="fs-14">月</small></span>
+                        <span class="year fs-18">2020</span>
+                    </div>
+                  
+                   
+                    <ul class="fl">
+                        <li>
+                          <input type="checkbox" checked>
+                          <i></i>
+                          <h4>Java跨平台原理</h4>
+                          <blockquote>
+                            Java对于不同系统、不同版本、不同位数的Java虚拟机来屏蔽不同的系统指令集差异而对外提供统一的接口
+                          </blockquote>
+                    
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>JDK、JRE、JVM的关系</h4>
+                            <blockquote>
+                                <strong>JDK(java development toolkit)：Java开发工具包</strong>
+                                <br>
+                                是java的核心，包括了java运行环境，一堆java工具（javac、java、jdb）和java基础类库（javaAPI包括rt.jar）
+                                <br><br>
+                                <strong>JRE(java runtime environment)：Java运行环境</strong>
+                                <br>
+                                所有的java程序都要在JRE下才能运行，包括JVM和Java核心类库和支持文件，与JDK相比不包含开发工具（编译器、调试器和其他工具）
+                                <br><br>
+                                <strong>JVM(java virtual mechinal)：Java虚拟机</strong>
+                                <br>
+                                JVM是JRE的一部分，他是一个虚拟出来的计算机，JVM的主要工作是解释自己的指令集（即字节码）并映射到本地的CPU指令集或OS的系统调用
+                            </blockquote>
+                            
+
+                          </li>
+                        <li>
+                        <input type="checkbox" checked>
+                        <i></i>
+                        <h4>面向对象的特征</h4>
+                        <div>
+                                
+                                <p><strong>四个：封装、抽象、继承、多态</strong></p>
+                            <blockquote>
+                                <div class="div-text">
+                                    <strong>封装：将客观的事物封装成抽象的类，并且将自己类中的属性私有化，只对外提供set和get方法来进行属性的赋值和取值</strong>
+                                    <br>
+                                    <strong>继承：子类继承父类，子类可以使用父类的所有功能，并且在无需改变父类的情况下能对这些功能进行扩展</strong>
+                                    <br>
+                                    <strong>多态：允许相同或不同子类型的对象对同一消息作出不同的响应，如重载和重写</strong>
+                                </div>
+
+                            </blockquote>
+                        </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>访问修饰符public,private,protected,以及默认时的区别</h4>
+                            <div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style='text-align:center;'>修饰符</th>
+                                            <th style='text-align:center;'>当前类</th>
+                                            <th style='text-align:center;'>同包</th>
+                                            <th style='text-align:center;'>子类</th>
+                                            <th style='text-align:center;'>其他包</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style='text-align:center;'>public</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>√</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>protect</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>×</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>default</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>×</td>
+                                            <td style='text-align:center;'>×</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>private</td>
+                                            <td style='text-align:center;'>√</td>
+                                            <td style='text-align:center;'>×</td>
+                                            <td style='text-align:center;'>×</td>
+                                            <td style='text-align:center;'>×</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>基本数据类型，包装类型</h4>
+                            <div>
+                                <blockquote>
+                                    <p>基本数据类型有八种</p>
+                                    <p><strong>byte、short、int、long、char、boolean、float、double</strong></p>
+                                </blockquote>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th style='text-align:center;'>数据类型</th>
+                                            <th style='text-align:center;'>占用字节</th>
+                                            <th style='text-align:center;'>取值范围</th>
+                                            <th style='text-align:center;'>默认值</th>
+                                            <th style='text-align:center;'>包装类型</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style='text-align:center;'>boolean</td>
+                                            <td style='text-align:center;'>只有true和false</td>
+                                            <td style='text-align:center;'>true、false</td>
+                                            <td style='text-align:center;'>false</td>
+                                            <td style='text-align:center;'>Boolean</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>byte</td>
+                                            <td style='text-align:center;'>1(8位）</td>
+                                            <td style='text-align:center;'>-128~127</td>
+                                            <td style='text-align:center;'>0</td>
+                                            <td style='text-align:center;'>Byte</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>short</td>
+                                            <td style='text-align:center;'>2(16位)</td>
+                                            <td style='text-align:center;'>-32768~32767</td>
+                                            <td style='text-align:center;'>0</td>
+                                            <td style='text-align:center;'>Short</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>int</td>
+                                            <td style='text-align:center;'>4(32位)</td>
+                                            <td style='text-align:center;'>-2^31~2^31-1</td>
+                                            <td style='text-align:center;'>0</td>
+                                            <td style='text-align:center;'>Integer</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>long</td>
+                                            <td style='text-align:center;'>8</td>
+                                            <td style='text-align:center;'>-2^63~2^63-1</td>
+                                            <td style='text-align:center;'>0.0l</td>
+                                            <td style='text-align:center;'>Long</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>float</td>
+                                            <td style='text-align:center;'>4</td>
+                                            <td style='text-align:center;'>3.4E-45~1.4E38</td>
+                                            <td style='text-align:center;'>0.0f</td>
+                                            <td style='text-align:center;'>Float</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>double</td>
+                                            <td style='text-align:center;'>8</td>
+                                            <td style='text-align:center;'>4.9E-324~1.8E308</td>
+                                            <td style='text-align:center;'>0</td>
+                                            <td style='text-align:center;'>Double</td>
+                                        </tr>
+                                        <tr>
+                                            <td style='text-align:center;'>char</td>
+                                            <td style='text-align:center;'>2</td>
+                                            <td style='text-align:center;'>0~65535</td>
+                                            <td style='text-align:center;'>\u0000(空格)</td>
+                                            <td style='text-align:center;'>Character</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <blockquote>
+                                    <p>包装类型：每一个基本数据类型都一一对于一个包装类型</p>
+                                    <p>java是一个面向对象的语言，而基本数据类型不具备面向对象的特征</p>
+                                </blockquote>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>拆箱和装箱</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>装箱：把基本数据类型转化为对应的包装类型</strong></p>
+                                    <p><strong>Integer i = 1;</strong></p>
+                                    <p><strong>自动装箱实际上会在编译时会调用Integer.valueOf()方法来装箱</strong></p>
+                                    <p><strong>拆箱：把包装类型转换为基本数据类型</strong></p>
+                                    <p><strong>int j = i;</strong></p>
+                                    <p><strong>实际上在编译时会调用intValue()方法来拆箱</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>==和equals的区别</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>==用来判断两个变量之间的值是否相等，变量可分为基本数据变量和引用类型，如果比较的是基本数据类型，那么就是比较他们的值是否相等，如果比较的是引用类型，那么比较的是他们引用的内存地址</strong>
+                                    </p>
+                                    <p><strong>equals不能用于作用与基本数据类型的变量，他继承至Object类，比较的是是否是同一对象，如果没有对equals方法进行重写，则比较的是引用类型变量所指向对象的地址</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>重写equals为何要重写hashcode</h4>
+                            <div>
+                                <blockquote>
+                                    <li><strong>使用hashcode方法提前校验，可以避免每一次对比都调用equals方法，提高效率（因为hashcode不等，equals一定不等）</strong></li>
+                                    <li><strong>为了保证是同一对象，如果重写了equals方法，而没有重写hashcode方法，会出现equals相等，hashcode不相等的情况，重写hashcode方法就是为了避免这种情况发生</strong>
+                                    </li>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>String，StringBuilder，StringBuffer的区别</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>String是字符串常量，其值不能改变，底层是使用了一个不可变的数组对象(final char[])</strong></p>
+                                    <p><strong>StringBulider是线程不安全的，其值可以改变，速度快，底层是使用了一个可变的数组对象（没有用final修饰）</strong></p>
+                                    <p><strong>StringBuffer是线程安全的，其值可以改变，速度慢。</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>拼接字符串</h4>
+                            <div>
+                                <blockquote>
+                                    <div class="div-text">
+                                        String s = &quot;a&quot; + &quot;b&quot;;
+                                    </div>
+                                        <p><strong>开辟了三个内存空间</strong></p>
+                                    <div class='div-text'>
+                                        <p><strong>StringBuilder sb = new StringBuilder();</strong></p>
+                                            <p><strong>sb.append(&quot;a&quot;).append(&quot;b&quot;);</strong></p>
+                                    </div>
+                                    <p><strong>只开辟了一个内存空间</strong></p>
+                                    <p><strong>拼接字符串不能使用String，要是有StringBuilder或StringBuffer</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>Map</h4>
+                            <p><strong>可分为HashMap和TreeMap</strong></p>
+                            <div>
+                            <blockquote>
+                                <p>HashMap：hash表无序，不能放重复键，允许放空键空值</p>
+                                <p>TreeMap：数据结构是树，有序</p>
+                            </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>Collection</h4>
+                            <div>
+                                <blockquote>
+                                    <p>List：有序的，可以重复的</p>
+                                    <p>Set：无序的，不可重复的，需要重写equals和hashcode方法</p>
+                                </blockquote>
+                                <p>List接口：ArrayList、LinkedList</p>
+                                <p>Set接口：HashSet、TreeSet</p>
+                                <blockquote>
+                                    <p>HashSet：底层数据结构是哈希链表，保证元素的唯一，不保证元素顺序不变，需要使用equals方法和hashcode方法</p>
+                                    <p>TreeSet：底层数据结构是二叉树，保证元素唯一，并对元素按自然排序进行排序，可以实现Compareable接口重写compareTo()实现自定义排序</p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4> ArrayList、LinkedList和vector的区别</h4>
+                            <div>
+                                <p>ArrayLsit和LinkedList都是实现了List接口</p>
+                                <p>ArrayList是基于动态数组的数据结构，LinkedList是基于链表的</p>
+                                <blockquote>
+                                    <p><strong>ArrayList：查询快，增加删除慢，由于数组在内存中是一块连续的内存，查询根据索引就能找到，所以快，而添加和删除需要移动内存，所以慢。</strong></p>
+                                    <p><strong>LinkedList：增加删除快，查询慢，由于链表在内存中不是连续的，查找时，需要从头部开始，挨着找，所以查询慢，而添加删除时，只需要改变引用指向即可，所以增加删除快</strong></p>
+                                    <p><strong>ArrayList：默认容量10，每次扩容时为之前的1.5倍，是线程不安全的，效率高</strong></p>
+                                    <p><strong>vector：默认容量10，每次扩容是为之前的2倍，是线程安全的，效率低</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>HashMap和HashTable的区别</h4>
+                            <div>
+                                <p>相同点</p>
+                                <blockquote>
+                                    <p><strong>HashMap和HashTable都是通过键值对来存储值的</strong></p>
+                                </blockquote>
+                                <p>不同点</p>
+                                <blockquote>
+                                    <p><strong>HashMap：可以把null作为键或值，是线程安全的，效率较高，默认容量16，每次扩容时为原来的两倍</strong></p>
+                                    <p><strong>HashTable：不能把null作为键或值，是线程不安全的，效率较低，默认容量为11，每次 扩容为原来的两倍加一</strong></p>
+                                </blockquote>
+                                <p>创建时，如果给定容量初始值，那么HashTable就是给定的初始值，而HashMap会自动扩充为2的幂次方大小</p>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>HashMap与concurrentHashMap的区别</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>concurrentHashMap对整个Map进行了分段分割，分为了N个Segment，默认提升16倍，相对于HashTable的synchronized锁粒度更精细了一些，并发性能更好，而HashMap没有锁机制，不是线程安全的，JDk1.8之后concurrentHashMap摒弃了Segment的数据结构，直接采用数组+链表+红黑树的数据结构实现，并发控制使用synchronized和CAS(compare
+                                            and swap)来操作</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>BIO、NIO、AIO的区别</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>BIO：同步阻塞</strong></p>
+                                    <p><strong>用户发起一个IO操作请求后，必须等待IO操作的完成，只有当真正完成了IO操作之后，用户进程才能运行</strong></p>
+                                    <p><strong>NIO：同步非阻塞</strong></p>
+                                    <p><strong>用户发起一个IO操作请求后，后边可以做其他事情，但是用户进程需要时不时的询问IO操作是否就绪，从而引起不必要的CPU资源浪费</strong></p>
+                                    <p><strong>AIO：异步非阻塞</strong></p>
+                                    <p><strong>用户发起一个IO操作请求后立即返回，等IO操作真正完成之后，应用程序会得到IO操作完成的通知。</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>实现拷贝文件的工具类使用字符流还是字节流</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>我们拷贝的文件不确定是只包含字符流，又可能是字节流（图片、声音、图像等），为保证通用性，要是有字节流</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>实现线程的方式</h4>
+                            <div>
+                                <blockquote>
+                                    <ol start=''>
+                                        <li><strong>继承Thread类</strong></li>
+                                        <li><strong>实现Runnable接口</strong></li>
+                                        <li><strong>实现Callable接口</strong></li>
+                            
+                                    </ol>
+                                </blockquote>
+                                <p>继承拓展性不强，Java总是单继承，如果一个类继承了Thread类就不能继承其他类了</p>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>线程的启动方式</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>启动线程调用start方法，而启动以后执行的是run方法</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>区分线程</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>调用setName方法，设置一个线程名称，只是一种规范，在线程创建完成后，都需要设置名称</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4> sleep和wait的区别</h4>
+                            <div>
+                                <blockquote>
+                                    <ol start=''>
+                                        <li><strong>sleep定义在Thread类上，不会释放锁，使用在任何地方</strong></li>
+                                        <li><strong>wait定义在object类上，会释放锁，必须在同步方法或同步代码块中执行</strong></li>
+                                        <li><strong>超时或调用interrupt方法唤醒sleep线程</strong></li>
+                                        <li><strong>notify随机唤醒一个wait线程，notifyall唤醒所有wait线程</strong></li>
+                            
+                                    </ol>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>synchronized和lock的区别</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>synchronized时一个关键字，lock是一个接口</strong></p>
+                                    <p><strong>synchronized可以给方法和同步代码块加锁，lock只能给同步代码块加锁</strong></p>
+                                    <p><strong>synchronized无需手动获取和释放锁，发生异常时会自动解锁，不会出现死锁，lock需要自己手动加锁和释放锁，如lock()、unlock()，如果忘记使用unlock()，则会出现死锁，所以一般在finally里面加上unlock()</strong>
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>synchronized和volatile的区别</h4>
+                            <div>
+                            <blockquote>
+                                <ol start=''>
+                                    <li>
+                                        <p><strong>作用位置不同</strong></p>
+                                        <p><strong>synchronized修饰方法、代码块</strong></p>
+                                        <p><strong>volatile修饰变量</strong></p>
+                                    </li>
+                                    <li>
+                                        <p><strong>作用不同</strong></p>
+                                        <p><strong>synchronized可以保证原子性和可见性，可能会造成线程阻塞</strong></p>
+                                        <p><strong>volatile仅能保证可见性，无法保证原子性，不会造成线程阻塞</strong></p>
+                                    </li>
+
+                                </ol>
+                         </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>什么是死锁，如何解决</h4>
+                            <div>
+                                <p>死锁</p>
+                                <blockquote>
+                                    <p>线程1独占资源a并且尝试获取独占资源b，而线程2独占资源b并尝试获取独占资源a，两个线程在等待另一个资源的同时不释放资源，就形成了死锁</p>
+                                </blockquote>
+                                <p>形成死锁的四个必要条件</p>
+                                <blockquote>
+                                    <ol start=''>
+                                        <li>互斥条件：一个资源每次只能被一个进程使用</li>
+                                        <li>请求与保持条件：一个进程因请求资源而阻塞时，对已获得的资源保持不放</li>
+                                        <li>不剥夺资源：进程以获得的资源，在未完成之前，不能强行剥夺</li>
+                                        <li>循环等待条件：若干个进程形成一种头尾相接的循环等待资源关系</li>
+                            
+                                    </ol>
+                                </blockquote>
+                                <p>预防死锁</p>
+                                <blockquote>
+                                    <ol start=''>
+                                        <li>
+                                            <p><strong>破坏请求和保存条件</strong></p>
+                                            <p><strong>一次性的申请所有资源，之后不再申请资源，如果不满足资源条件则得不到资源分配。</strong></p>
+                                            <p><strong>只获得初期资源运行，之后将运行完的资源释放，请求新的资源</strong></p>
+                                        </li>
+                                        <li>
+                                            <p><strong>破坏不可抢占条件</strong></p>
+                                            <p><strong>当一个进程获取某种不可抢占资源，提出新的资源申请，若不能满足，则释放所有资源，以后需要，再次重新申请</strong></p>
+                                        </li>
+                                        <li>
+                                            <p><strong>破坏循环等待条件</strong></p>
+                                            <p><strong>对资源进行排号，按照序号递增的顺序请求资源，若进程获得序号高的资源想要获取序号低的资源，就需要先释放序号高的资源</strong></p>
+                                        </li>
+                            
+                                    </ol>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4> 线程并发库</h4>
+                            <div>
+                                <p>创建线程池的四种方式</p>
+                                <figure>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th style='text-align:center;'>方法名</th>
+                                                <th style='text-align:center;'>作用</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style='text-align:center;'>newFixedThreadPool()</td>
+                                                <td style='text-align:center;'>创建固定数量的线程池</td>
+                                            </tr>
+                                            <tr>
+                                                <td style='text-align:center;'>newCachedThreadPool()</td>
+                                                <td style='text-align:center;'>创建缓存的线程池</td>
+                                            </tr>
+                                            <tr>
+                                                <td style='text-align:center;'>newSingleThreadExecutor()</td>
+                                                <td style='text-align:center;'>创建单个线程</td>
+                                            </tr>
+                                            <tr>
+                                                <td style='text-align:center;'>newScheduledThreadPool()</td>
+                                                <td style='text-align:center;'>创建定时器线程池</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </figure>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>线程池的作用</h4>
+                            <div>
+                                <blockquote>
+                                    <ol start=''>
+                                        <li><strong>限定线程的个数，提高线程的可管理性</strong></li>
+                                        <li><strong>提高响应速度</strong></li>
+                                        <li><strong>降低资源消耗</strong></li>
+                            
+                                    </ol>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>什么是反射</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>程序在运行时可以通过类名获取类的所有信息</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>反射的实现方式</h4>
+                            <div>
+                                <blockquote>
+                                    <ol start="1">
+                                        <li><strong>Class.forName()</strong></li>
+                                        <li><strong>类名.class</strong></li>
+                                        <li><strong>对象.getClass()</strong></li>
+                                    </ol>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>反射的优缺点</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>优点：在运行期间绑定对象，提高了灵活性</strong></p>
+                                    <p><strong>缺点：有性能有影响，他的操作总是慢于直接代码</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>怎么实现动态代理</h4>
+                            <div>
+                                <p>JDK动态代理和Cglib代理</p>
+                                <blockquote>
+                                    <p><strong>JDK代理是基于接口实现的</strong></p>
+                                    <p><strong>Cglib代理是基于继承实现的</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <!-- <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4></h4>
+                            <div>
+                                
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4></h4>
+                            <div>
+                                
+                            </div>
+                        </li> -->
+                      </ul>
+                </section>
+            </article>
+        </div>
+        <div class="col-other">
+            <div class="inner">
+                <!--右边悬浮 平板或手机设备显示-->
+                <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+                <div class="article-category">
+                    <div class="article-category-title">分类导航</div>
+                    <li data-index="0" class="slider"></li>
+                    <li data-index="1" style="font-size: 16px;"><a href="javascript:article()">全部文章</a></li>
+                    <li data-index="2" style="font-size: 16px;"><a href="javascript:java()">Java</a></li>
+                    <li data-index="3" style="font-size: 16px;"><a href="javascript:sql()">数据库</a></li>
+                    <li data-index="4" style="font-size: 16px;"><a href="#">前端</a></li>
+                    <li data-index="5" style="font-size: 16px;"><a href="#">框架</a></li>
+                    <li data-index="6" style="font-size: 16px;"><a href="javascript:questions()">面试题</a></li>
+                    <div class="f-cb"></div>
+                </div>
+            </div>
+        </div>	
+    </div>
+</div>
+<script src="../js/yss/article.js"></script>

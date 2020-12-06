@@ -1,0 +1,342 @@
+<div class="container-fixed">
+    <div class="col-content" style="width:100%" id="col-content">
+        <div class="inner">
+            <article class="article-list">
+
+                <input type="hidden" value="@Model.BlogTypeID" id="blogtypeid" />
+                <section class="article-item" style="background-color: auto;">
+
+                    <aside class="title" style="line-height:1.5;">
+                        <h2>IDEA</h2>
+                        <p class="fc-grey fs-14">
+                            <small>
+                                作者：<a href="javascript:void(0)" target="_blank" class="fc-link">胡某</a>
+                            </small>
+                            <small class="ml10">观看次数：<i class="readcount">999+</i></small>
+                            <small class="ml10">更新于 <label>2020-11-14 16:08:21</label> </small>
+                        </p>
+                    </aside>
+                    <div class="time mt10" style="padding-bottom:0;">
+                        <span class="day">1</span>
+                        <span class="month fs-18">7<small class="fs-14">月</small></span>
+                        <span class="year fs-18">2020</span>
+                    </div>
+
+
+                    <ul class="fl">
+                        <li style="padding-bottom: 0px;padding-top: 0px;">
+                            <h1 style="text-align: center;">快捷方法</h1>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>补全for循环</h4>
+                            <div>
+                                <blockquote>
+                                    <p>length.for
+                                        for(int i=0;i&lt;length;i++){}</p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>补全返回类型及变量</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>方法().var</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>输出</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>sout</strong></p>
+                                    <p><strong>System.out.println();</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>main方法</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>psvm 或 main</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>方法注释</h4>
+                            <div>
+                                <blockquote>
+                                    <p>在方法上面一行输入/**回车，就会出现以下注释</p>
+                                    <div class="div-text">
+                                        /** <br>
+                                        * <br>
+                                        * @param <br>
+                                        * @param <br>
+                                        * @return<br>
+                                        */
+                                    </div>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li style="padding-top: 0px;padding-bottom: 0px;">
+                            <h1 style="text-align: center;">快捷键</h1>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>代码快捷键</h4>
+                            <div>
+                                <span class="h6-text">1. 重写方法</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+O</strong></p>
+                                </blockquote>
+                                <span class="h6-text">2. 构造函数</span>
+                                <blockquote>
+                                    <p><strong>ALT+INSERT</strong></p>
+                                </blockquote>
+                                <span class="h6-text">3. 自动导入变量定义</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+Alt+V</strong></p>
+                                </blockquote>
+                                <span class="h6-text">4. 大小写转化</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+Shift+U</strong></p>
+                                </blockquote>
+                                <span class="h6-text">5. 查看源码</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+B</strong></p>
+                                </blockquote>
+                                <span class="h6-text">6. 纠错，导包，提示</span>
+                                <blockquote>
+                                    <p><strong>Alt+Enter</strong></p>
+                                </blockquote>
+
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>功能快捷键</h4>
+                            <div>
+                                <span class="h6-text">1. 格式化代码</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+Shift+L</strong></p>
+                                </blockquote>
+                                <span class="h6-text">2. 删除一行</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+y</strong></p>
+                                </blockquote>
+                                <span class="h6-text">3. 注释多行</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+Shift+/</strong></p>
+                                </blockquote>
+                                <span class="h6-text">4. 注释单行</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+/</strong></p>
+                                </blockquote>
+                                <span class="h6-text">5. 复制到下一行</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+D</strong></p>
+                                </blockquote>
+                                <span class="h6-text">6. 全局搜索</span>
+                                <blockquote>
+                                    <p><strong>CTRL+SHIFT +F</strong></p>
+                                </blockquote>
+                                <span class="h6-text">7. 上/下移一行</span>
+                                <blockquote>
+                                    <p><strong>Alt+Shift+Up/Down</strong></p>
+                                </blockquote>
+                                <span class="h6-text">8. 替换文本</span>
+                                <blockquote>
+                                    <p><strong>Ctrl+R</strong></p>
+                                </blockquote>
+                                <span class="h6-text">9. 方法展开、折叠</span>
+                                <p><strong>当前方法</strong></p>
+                                <blockquote>
+                                    <p><strong>Ctrl+&quot;+/-&quot;</strong></p>
+                                </blockquote>
+                                <p><strong>全部</strong></p>
+                                <blockquote>
+                                    <p><strong>Ctrl+Shift+&quot;+/-&quot;</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li style="padding-top: 0px;padding-bottom: 0px;">
+                            <h1 style="text-align: center;">其他快捷键</h1>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>复制路径</h4>
+                            <div>
+                                <blockquote>
+                                    <p><strong>Ctrl+Shift+C</strong></p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li style="padding-top: 0px;padding-bottom: 0px;">
+                            <h1 style="text-align: center;">设置作者注释</h1>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>设置作者注释</h4>
+                            <div>
+                                <p><strong>准备好模板</strong></p>
+                                <blockquote>
+                                    <div>/** <br>
+                                        * @Author 张三 <br>
+                                        * @Description <br>
+                                        * @Date $date$ $time$ <br>
+                                        **/
+                                    </div>
+                                </blockquote>
+
+                                <p><strong>添加模板</strong></p>
+                                <blockquote>
+                                    <p>点击File → settings→Editor→live Templates</p>
+                                    <p>点击“+”，先添加一个群组,点击Template Group，取名为MyTemplate</p>
+
+                                    <p>添加一个模板名称，点击Live Template</p>
+
+                                    <p>Abbreviation框填入“*”，Description框填入“注释模板”，Template text框填入刚才的模板</p>
+
+                                    <p>点击Define，选择Java→Declaration</p>
+
+                                    <p>点击Edit variables进行如下配置，点击OK</p>
+                                    <figure>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th style='text-align:center;'>Name</th>
+                                                    <th style='text-align:center;'>Expression</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style='text-align:center;'>date</td>
+                                                    <td style='text-align:center;'>date()</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style='text-align:center;'>time</td>
+                                                    <td style='text-align:center;'>time()</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </figure>
+                                </blockquote>
+                                <p>测试</p>
+                                <blockquote>
+                                    <p>在类名前输入*再按下Tab键，如下便成功</p>
+                                    <div class="div-text">/** <br>
+                                        * @Author 张三 <br>
+                                        * @Description <br>
+                                        * @Date 2020/10/27 16:06 <br>
+                                        **/
+                                    </div>
+                                    <p>在方法名前面输入@Param跟@return就会有值</p>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>设置方法注释</h4>
+                            <div>
+                                <p>此操作在方法外也能获取参数</p>
+                                <p>准备好模板</p>
+                                <blockquote>
+                                    <div>* <br>
+                                        $params$ <br>
+                                        * @return <br>
+                                        * @Author zhangsan <br>
+                                        * @Date $date$ <br>
+                                        **/
+                                    </div>
+                                </blockquote>
+
+                                <p>添加模板</p>
+                                <blockquote>
+                                    <p>Abbreviation框填入 &quot;method&quot;(自定义)</p>
+                                    <p>Options下面的Expand with设置为Enter</p>
+                                    <figure>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th style='text-align:center;'>Name</th>
+                                                    <th style='text-align:center;'>Expression</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td style='text-align:center;'>params</td>
+                                                    <td style='text-align:center;'>&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style='text-align:center;'>return</td>
+                                                    <td style='text-align:center;'>methodReturnType()</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </figure>
+                                    <p>params中Expression填入以下脚本</p>
+                                    <div class="div-text">groovyScript(&quot;def result=&#39;&#39;; def params=\&quot;${_1}\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i = 0; i &lt; params.size(); i++) {result+=&#39; * @param &#39; + params[i] + ((i &lt; params.size() - 1) ? &#39;\\n&#39; : &#39;&#39;)}; return result&quot;, methodParameters())
+                                    </div>
+                                </blockquote>
+
+                                <p>测试</p>
+                                <blockquote>
+                                    <p>idea默认的生成注释方式为 /*+模板名+快捷键</p>
+                                    <p>在方法名上输入/*method+enter</p>
+                                    <div>/** <br>
+                                        * @param 参数 <br>
+                                        * @return 结果 <br>
+                                        * @Author zhangsan <br>
+                                        * @Date 2020/11/18 <br>
+                                        **/
+                                    </div>
+                                </blockquote>
+
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4></h4>
+                            <div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+        </div>
+    </div>
+    <div class="col-other">
+        <div class="inner">
+            <!--右边悬浮 平板或手机设备显示-->
+            <div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+            <div class="article-category">
+                <div class="article-category-title">分类导航</div>
+                <li data-index="0" class="slider"></li>
+                <li data-index="1" style="font-size: 16px;"><a href="javascript:article()">全部文章</a></li>
+                <li data-index="2" style="font-size: 16px;"><a href="javascript:java()">Java</a></li>
+                <li data-index="3" style="font-size: 16px;"><a href="javascript:sql()">数据库</a></li>
+                <li data-index="4" style="font-size: 16px;"><a href="#">前端</a></li>
+                <li data-index="5" style="font-size: 16px;"><a href="#">框架</a></li>
+                <li data-index="6" style="font-size: 16px;"><a href="javascript:questions()">面试题</a></li>
+                <div class="f-cb"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/yss/article.js"></script>
