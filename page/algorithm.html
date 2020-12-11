@@ -576,6 +576,606 @@
                                 </blockquote>
                             </div>
                         </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>堆排序</h4>
+                            <div id='write' class=''>
+                                <p><span>1.算法思路</span></p>
+                                <blockquote>
+                                        <p><span>创建一个堆 H[0……n-1]；</span></p>
+                                        <p><span>把堆首（最大值）和堆尾互换；</span></p>
+                                        <p><span>把堆的尺寸缩小 1，并调用 shift_down(0)，目的是把新的数组顶端数据调整到相应位置；</span></p>
+                                        <p><span>重复步骤 2，直到堆的尺寸为 1。</span></p>
+                                </blockquote>
+                                <p><span>2.动图演示</span></p>
+                                <p><img src="../image/algorithm/heapSort.gif" referrerpolicy="no-referrer" alt="heapSort"></p>
+                                <p><img src="../image/algorithm/Sorting_heapsort_anim.gif" referrerpolicy="no-referrer" alt="Sorting_heapsort_anim">
+                                </p>
+                                <p><span>3.代码实现</span></p>
+                                <blockquote>
+                                    <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" lang="java"
+                                        style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap CodeMirror-focused" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 60.05px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+                                    </div>
+                                    <div class="CodeMirror-measure"></div>
+                                    <div style="position: relative; z-index: 1;"></div>
+                                    <div class="CodeMirror-code" role="presentation" style="">
+                                        <div class="CodeMirror-activeline" style="position: relative;">
+                                            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                                            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;">
+                                            </div>
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-variable-3">int</span>[] <span class="cm-def">sort</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">array</span>){</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">length</span> <span class="cm-operator">=</span> <span class="cm-variable">array</span>.<span class="cm-variable">length</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span> <span class="cm-operator">=</span> <span class="cm-variable">Arrays</span>.<span class="cm-variable">copyOf</span>(<span class="cm-variable">array</span>,<span class="cm-variable">length</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">buildMaxHeap</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">length</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-variable">length</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>;<span class="cm-variable">i</span> <span class="cm-operator">&gt;</span> <span class="cm-number">0</span>;<span class="cm-variable">i</span><span class="cm-operator">--</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">swap</span>(<span class="cm-variable">arr</span>,<span class="cm-number">0</span>,<span class="cm-variable">i</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">length</span><span class="cm-operator">--</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">heapify</span>(<span class="cm-variable">arr</span>,<span class="cm-number">0</span>,<span class="cm-variable">length</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">arr</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">private</span> <span class="cm-variable-3">void</span> <span class="cm-def">buildMaxHeap</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">length</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">int</span>) <span class="cm-variable">Math</span>.<span class="cm-variable">floor</span>(<span class="cm-variable">length</span> <span class="cm-operator">/</span> <span class="cm-number">2</span>);<span class="cm-variable">i</span> <span class="cm-operator">&gt;=</span> <span class="cm-number">0</span> ; <span class="cm-variable">i</span><span class="cm-operator">--</span>) {</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">heapify</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">i</span>,<span class="cm-variable">length</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">private</span> <span class="cm-variable-3">void</span> <span class="cm-def">heapify</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">i</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">length</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">left</span> <span class="cm-operator">=</span> <span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">1</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">right</span> <span class="cm-operator">=</span> <span class="cm-number">2</span> <span class="cm-operator">*</span> <span class="cm-variable">i</span> <span class="cm-operator">+</span> <span class="cm-number">2</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">largest</span> <span class="cm-operator">=</span> <span class="cm-variable">i</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">left</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">length</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">arr</span>[<span class="cm-variable">left</span>] <span class="cm-operator">&gt;</span> <span class="cm-variable">arr</span>[<span class="cm-variable">largest</span>]){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">largest</span> <span class="cm-operator">=</span> <span class="cm-variable">left</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">right</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">length</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">arr</span>[<span class="cm-variable">right</span>] <span class="cm-operator">&gt;</span> <span class="cm-variable">arr</span>[<span class="cm-variable">largest</span>]){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">largest</span> <span class="cm-operator">=</span> <span class="cm-variable">right</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">largest</span> <span class="cm-operator">!=</span> <span class="cm-variable">i</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">swap</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">i</span>,<span class="cm-variable">largest</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">heapify</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">largest</span>,<span class="cm-variable">length</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">private</span> <span class="cm-variable-3">void</span> <span class="cm-def">swap</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">i</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">j</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">temp</span> <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-variable">i</span>];</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">arr</span>[<span class="cm-variable">i</span>] <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-variable">j</span>];</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">arr</span>[<span class="cm-variable">j</span>] <span class="cm-operator">=</span> <span class="cm-variable">temp</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 941px;">
+                                    </div>
+                                    <div class="CodeMirror-gutters" style="display: none; height: 941px;"></div>
+                                    </div>
+                                    </div>
+                                    </pre>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>计数排序</h4>
+                            <div id='write' class=''>
+                                <p><span>1.算法思路</span></p>
+                                    <blockquote>
+                                            <p><span>找出待排序的数组中最大和最小的元素</span></p>
+                                            <p><span>统计数组中每个值为i的元素出现的次数，存入数组C的第i项</span></p>
+                                            <p><span>对所有的计数累加（从C中的第一个元素开始，每一项和前一项相加）</span></p>
+                                            <p><span>反向填充目标数组：将每个元素i放在新数组的第C(i)项，每放一个元素就将C(i)减去1</span></p>
+                                    </blockquote>
+                                    <p><span>2.动图演示</span></p>
+                                    <p><img src="../image/algorithm/countingSort.gif" referrerpolicy="no-referrer" alt="countingSort"></p>
+                                    <p><span>3.代码实现</span></p>
+                                    <blockquote>
+                                        <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" lang="java"
+                                            style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap CodeMirror-focused" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 492.8px; left: 190.175px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-variable-3">int</span>[] <span class="cm-def">sort</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">array</span>){</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span> <span class="cm-operator">=</span> <span class="cm-variable">Arrays</span>.<span class="cm-variable">copyOf</span>(<span class="cm-variable">array</span>,<span class="cm-variable">array</span>.<span class="cm-variable">length</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">maxLength</span> &nbsp;<span class="cm-operator">=</span> <span class="cm-variable">getMaxLength</span>(<span class="cm-variable">arr</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">countingSort</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">maxLength</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">private</span> <span class="cm-variable-3">int</span>[] <span class="cm-def">countingSort</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">maxLength</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">count</span>[] <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">maxLength</span><span class="cm-operator">+</span><span class="cm-number">1</span>];</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">value</span> : <span class="cm-variable">arr</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">count</span>[<span class="cm-variable">value</span>]<span class="cm-operator">++</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">index</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;=</span> <span class="cm-variable">maxLength</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">while</span> (<span class="cm-variable">count</span>[<span class="cm-variable">i</span>] <span class="cm-operator">&gt;</span> <span class="cm-number">0</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arr</span>[<span class="cm-variable">index</span><span class="cm-operator">++</span>] <span class="cm-operator">=</span> <span class="cm-variable">i</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">count</span>[<span class="cm-variable">i</span>]<span class="cm-operator">--</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">arr</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-def">getMaxLength</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>) {</span></pre>
+                                        </div>
+                                        <div class="CodeMirror-activeline" style="position: relative;">
+                                            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                                            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div>
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">max</span> <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-number">0</span>];</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">value</span> : <span class="cm-variable">arr</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">value</span> <span class="cm-operator">&gt;</span> <span class="cm-variable">max</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">max</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">max</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 672px;">
+                                        </div>
+                                        <div class="CodeMirror-gutters" style="display: none; height: 672px;"></div>
+                                        </div>
+                                        </div>
+                                        </pre>
+                                    </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>桶排序</h4>
+                            <div id='write' class=''>
+                                <p><span>1.算法思路</span></p>
+                                <blockquote>
+                                        <p><span>1.在额外空间充足的情况下，尽量增大桶的数量</span></p>
+                                        <p><span>2.使用的映射函数能够将输入的 N 个数据均匀的分配到 K 个桶中</span></p>
+                                </blockquote>
+                                <p><span>2.动图演示</span></p>
+                                <blockquote>
+                                    <p><span>将元素分布于桶中</span></p>
+                                    <p><img src="../image/algorithm/Bucket_sort_1.svg_.png" referrerpolicy="no-referrer"
+                                            alt="Bucket_sort_1.svg_"></p>
+                                    <p><span>在桶内进行排序</span></p>
+                                    <p><img src="../image/algorithm/Bucket_sort_2.svg_.png" referrerpolicy="no-referrer" alt="Bucket_sort_2.svg_"></p>
+                                </blockquote>
+                                <p><span>3.代码实现</span></p>
+                                <blockquote>
+                                    <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"
+                                        style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+                                    </div>
+                                    <div class="CodeMirror-measure"></div>
+                                    <div style="position: relative; z-index: 1;"></div>
+                                    <div class="CodeMirror-code" role="presentation" style="">
+                                        <div class="CodeMirror-activeline" style="position: relative;">
+                                            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                                            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;">
+                                            </div>
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">java</span>.<span class="cm-variable">util</span>.<span class="cm-variable">Arrays</span>;</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">BucketSort</span> {</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-keyword">private</span> <span class="cm-keyword">static</span> <span class="cm-variable">InsertionSort</span> <span class="cm-variable">insertSort</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">InsertionSort</span>();</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-keyword">public</span> <span class="cm-variable-3">int</span>[] <span class="cm-variable">sort</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">array</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span> <span class="cm-operator">=</span> <span class="cm-variable">Arrays</span>.<span class="cm-variable">copyOf</span>(<span class="cm-variable">array</span>,<span class="cm-variable">array</span>.<span class="cm-variable">length</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-keyword">return</span> <span class="cm-variable">bucketSort</span>(<span class="cm-variable">arr</span>,<span class="cm-number">5</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-keyword">private</span> <span class="cm-variable-3">int</span>[] <span class="cm-variable">bucketSort</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">backetSize</span>) {</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-keyword">if</span>(<span class="cm-variable">arr</span>.<span class="cm-variable">length</span> <span class="cm-operator">==</span> <span class="cm-number">0</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-keyword">return</span> <span class="cm-variable">arr</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable-3">int</span> <span class="cm-variable">max</span> <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-number">0</span>];</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable-3">int</span> <span class="cm-variable">min</span> <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-number">0</span>];</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">value</span> : <span class="cm-variable">arr</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-keyword">if</span> (<span class="cm-variable">value</span> <span class="cm-operator">&gt;</span> <span class="cm-variable">max</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">max</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-keyword">else</span> <span class="cm-keyword">if</span> (<span class="cm-variable">value</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">min</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">min</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable-3">int</span> <span class="cm-variable">bucketCount</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">int</span>) <span class="cm-variable">Math</span>.<span class="cm-variable">floor</span>((<span class="cm-variable">max</span> <span class="cm-operator">-</span> <span class="cm-variable">min</span>) <span class="cm-operator">/</span> <span class="cm-variable">backetSize</span>) <span class="cm-operator">+</span> <span class="cm-number">1</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable-3">int</span>[][] <span class="cm-variable">buckets</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">bucketCount</span>][<span class="cm-number">0</span>];</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">//利用映射将数据分配到各个桶中</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;<span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">arr</span>.<span class="cm-variable">length</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable-3">int</span> <span class="cm-variable">index</span> <span class="cm-operator">=</span> (<span class="cm-variable-3">int</span>) <span class="cm-variable">Math</span>.<span class="cm-variable">floor</span>((<span class="cm-variable">arr</span>[<span class="cm-variable">i</span>] <span class="cm-operator">-</span> <span class="cm-variable">min</span>) <span class="cm-operator">/</span><span class="cm-variable">backetSize</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">buckets</span>[<span class="cm-variable">index</span>] <span class="cm-operator">=</span> <span class="cm-variable">arrAppend</span>(<span class="cm-variable">buckets</span>[<span class="cm-variable">index</span>],<span class="cm-variable">arr</span>[<span class="cm-variable">i</span>]);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-variable-3">int</span> <span class="cm-variable">arrIndex</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span>[] <span class="cm-variable">bakcet</span> : <span class="cm-variable">buckets</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-keyword">if</span> (<span class="cm-variable">bakcet</span>.<span class="cm-variable">length</span> <span class="cm-operator">&lt;=</span> <span class="cm-number">0</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-keyword">continue</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-comment">//对每个桶进行排序，这里采用了插入排序</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">bakcet</span> <span class="cm-operator">=</span> <span class="cm-variable">insertSort</span>.<span class="cm-variable">sort</span>(<span class="cm-variable">bakcet</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">value</span> : <span class="cm-variable">bakcet</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="cm-variable">arr</span>[<span class="cm-variable">arrIndex</span><span class="cm-operator">++</span>] <span class="cm-operator">=</span> <span class="cm-variable">value</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-keyword">return</span> <span class="cm-variable">arr</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> <span class="cm-comment">/**</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* 自动扩容，并保存数据</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @param arr</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @param value</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @return</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">*/</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span>[] <span class="cm-variable">arrAppend</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">value</span>) {</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arr</span> <span class="cm-operator">=</span> <span class="cm-variable">Arrays</span>.<span class="cm-variable">copyOf</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">arr</span>.<span class="cm-variable">length</span><span class="cm-operator">+</span><span class="cm-number">1</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arr</span>[<span class="cm-variable">arr</span>.<span class="cm-variable">length</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-operator">=</span> <span class="cm-variable">value</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">arr</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1456px;">
+                                    </div>
+                                    <div class="CodeMirror-gutters" style="display: none; height: 1456px;"></div>
+                                    </div>
+                                    </div>
+                                    </pre>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>基数排序</h4>
+                            <div id='write' class=''>
+                                <p><span>1.算法思路</span></p>
+                                <blockquote>
+                                    <p><span>根据键值的每位数字来分配桶；</span></p>
+                                </blockquote>
+                                <p><span>2.动图演示</span></p>
+                                <p><img src="../image/algorithm/radixSort.gif" referrerpolicy="no-referrer" alt="radixSort"></p>
+                                <p><span>3.代码实现</span></p>
+                                <blockquote>
+                                    <pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded md-focus" lang="java"
+                                        style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 1500.8px; left: 103.425px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre>
+                                    </div>
+                                    <div class="CodeMirror-measure"></div>
+                                    <div style="position: relative; z-index: 1;"></div>
+                                    <div class="CodeMirror-code" role="presentation" style="">
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">import</span> <span class="cm-variable">java</span>.<span class="cm-variable">util</span>.<span class="cm-variable">Arrays</span>;</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">RadixSort</span> {</span></pre>
+                                        </div>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-variable-3">int</span>[] <span class="cm-variable">sort</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">array</span>){</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span> <span class="cm-operator">=</span> <span class="cm-variable">Arrays</span>.<span class="cm-variable">copyOf</span>(<span class="cm-variable">array</span>,<span class="cm-variable">array</span>.<span class="cm-variable">length</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">maxDigit</span> <span class="cm-operator">=</span> <span class="cm-variable">getMaxDigit</span>(<span class="cm-variable">arr</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">radixSort</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">maxDigit</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">/**</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* 获得最高位</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @param arr</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @return</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">*/</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">getMaxDigit</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">maxValue</span> <span class="cm-operator">=</span> <span class="cm-variable">getMaxValue</span>(<span class="cm-variable">arr</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">getNumLength</span>(<span class="cm-variable">maxValue</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">getMaxValue</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">maxValue</span> <span class="cm-operator">=</span> <span class="cm-variable">arr</span>[<span class="cm-number">0</span>];</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">value</span> : <span class="cm-variable">arr</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">maxValue</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">value</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">maxValue</span> <span class="cm-operator">=</span> <span class="cm-variable">value</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">maxValue</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">getNumLength</span>(<span class="cm-variable-3">long</span> <span class="cm-variable">maxValue</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">if</span> (<span class="cm-variable">maxValue</span> <span class="cm-operator">==</span> <span class="cm-number">0</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-number">1</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">length</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">long</span> <span class="cm-variable">temp</span> <span class="cm-operator">=</span> <span class="cm-variable">maxValue</span>;<span class="cm-variable">temp</span> <span class="cm-operator">!=</span> <span class="cm-number">0</span>;<span class="cm-variable">temp</span> <span class="cm-operator">/=</span> <span class="cm-number">10</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">length</span><span class="cm-operator">++</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">length</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <div class="" style="position: relative;">
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span>[] <span class="cm-variable">radixSort</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">maxDigit</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">mod</span> <span class="cm-operator">=</span> <span class="cm-number">10</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">dev</span> <span class="cm-operator">=</span> <span class="cm-number">1</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">maxDigit</span>;<span class="cm-variable">i</span><span class="cm-operator">++</span>,<span class="cm-variable">dev</span> <span class="cm-operator">*=</span> <span class="cm-number">10</span>,<span class="cm-variable">mod</span> <span class="cm-operator">*=</span> <span class="cm-number">10</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">// 考虑负数的情况，这里扩展一倍队列数，其中 [0-9]对应负数，[10-19]对应正数 (bucket + 10)</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span>[][] <span class="cm-variable">counter</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable-3">int</span>[<span class="cm-variable">mod</span> <span class="cm-operator">*</span> <span class="cm-number">2</span>][<span class="cm-number">0</span>];</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;<span class="cm-variable">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable">arr</span>.<span class="cm-variable">length</span>;<span class="cm-variable">j</span><span class="cm-operator">++</span>) {</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">bucket</span> <span class="cm-operator">=</span> ((<span class="cm-variable">arr</span>[<span class="cm-variable">j</span>] <span class="cm-operator">%</span> <span class="cm-variable">mod</span>) <span class="cm-operator">/</span> <span class="cm-variable">dev</span>) <span class="cm-operator">+</span> <span class="cm-variable">mod</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">counter</span>[<span class="cm-variable">bucket</span>] <span class="cm-operator">=</span> <span class="cm-variable">arrAppend</span>(<span class="cm-variable">counter</span>[<span class="cm-variable">bucket</span>], <span class="cm-variable">arr</span>[<span class="cm-variable">j</span>]);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable-3">int</span> <span class="cm-variable">pos</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span>[] <span class="cm-variable">bucket</span> : <span class="cm-variable">counter</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">for</span> (<span class="cm-variable-3">int</span> <span class="cm-variable">value</span> : <span class="cm-variable">bucket</span>){</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arr</span>[<span class="cm-variable">pos</span><span class="cm-operator">++</span>] <span class="cm-operator">=</span> <span class="cm-variable">value</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">arr</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment">/**</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* 自动扩容，并保存数据</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">*</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @param arr</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @param value</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">* @return</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; <span class="cm-comment">*/</span></span></pre>
+                                        <div class="CodeMirror-activeline" style="position: relative;">
+                                            <div class="CodeMirror-activeline-background CodeMirror-linebackground"></div>
+                                            <div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;">
+                                            </div>
+                                            <pre class=" CodeMirror-line "
+                                                role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span>[] <span class="cm-variable">arrAppend</span>(<span class="cm-variable-3">int</span>[] <span class="cm-variable">arr</span>, <span class="cm-variable-3">int</span> <span class="cm-variable">value</span>) {</span></pre>
+                                        </div>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arr</span> <span class="cm-operator">=</span> <span class="cm-variable">Arrays</span>.<span class="cm-variable">copyOf</span>(<span class="cm-variable">arr</span>,<span class="cm-variable">arr</span>.<span class="cm-variable">length</span><span class="cm-operator">+</span><span class="cm-number">1</span>);</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">arr</span>[<span class="cm-variable">arr</span>.<span class="cm-variable">length</span> <span class="cm-operator">-</span> <span class="cm-number">1</span>] <span class="cm-operator">=</span> <span class="cm-variable">value</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">arr</span>;</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre>
+                                        <pre class=" CodeMirror-line "
+                                            role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    <div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1658px;">
+                                    </div>
+                                    <div class="CodeMirror-gutters" style="display: none; height: 1658px;"></div>
+                                    </div>
+                                    </div>
+                                    </pre>
+                                </blockquote>
+                            </div>
+                        </li>
+                        <!-- <li>
+                            <input type="checkbox" checked>
+                            <i></i>
+                            <h4>桶排序</h4>
+                            <div id='write' class=''>
+                            </div>
+                        </li> -->
                     </ul>
                 </section>
             </article>

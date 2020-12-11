@@ -93,6 +93,10 @@
 			document.documentElement.scrollTop=0;
 			$("#doc-container").load("algorithm.html");
 		}
+		function shiro(){
+			document.documentElement.scrollTop=0;
+			$("#doc-container").load("shiro.html");
+		}
 		//util
 		function git(){
 			document.documentElement.scrollTop=0;
